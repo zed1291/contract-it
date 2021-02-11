@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  quote: 1
+  contract: one
+  general_contractor: one
+
+two:
+  quote: 1
+  contract: two
+  general_contractor: two

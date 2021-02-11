@@ -1,0 +1,2 @@
+class SubContractsController < ApplicationController
+end

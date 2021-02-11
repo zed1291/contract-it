@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  quote: 1
+  sub_contract: one
+  subcontractor: one
+
+two:
+  quote: 1
+  sub_contract: two
+  subcontractor: two

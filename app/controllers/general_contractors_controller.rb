@@ -1,0 +1,2 @@
+class GeneralContractorsController < ApplicationController
+end

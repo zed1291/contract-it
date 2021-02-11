@@ -1,0 +1,2 @@
+class SubBidsController < ApplicationController
+end
