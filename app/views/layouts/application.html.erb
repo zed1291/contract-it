@@ -14,5 +14,12 @@
 
   <body>
     <%= yield %>
+    <% if session[:current_user_id] %>
+      Wuts uuuuuuuppppp???? U iz logged N
+      <br>
+      <%= link_to 'Log out', "/sessions/#{session[:current_user_id]}", method: :delete %>
+    <% else %>
+    <%= link_to 'Log in', '/sessions/login' %>
+    <% end %>
   </body>
 </html>

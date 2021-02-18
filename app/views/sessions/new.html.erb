@@ -1,0 +1,13 @@
+<% if flash[:errors] %>
+    <h4> Errors: </h4>
+    <% flash[:errors].each do |err| %>
+        <li> <%= err %> </li>
+    <% end %>
+<% end %>
+
+<%= form_with model: @user do |f| %>
+    <%= f.select :role, ["Owner", "General Contractor", "Subcontractor"] %>
+    <%= f.text_field :username, placeholder: "username" %>
+    <%= f.text_field :password, placeholder: "password" %>
+    <%= f.submit %>
+<% end %>
