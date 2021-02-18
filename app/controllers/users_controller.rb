@@ -1,15 +1,18 @@
 class UsersController < ApplicationController
     def create
         @user = User.new(strong_params)
-        if @user.valid?
+        if User.find_by_username(params[:user][:username])
+            # redirect_to 'goblygook'
+        elsif @user.valid?
             @user.save
             session[:current_user_id] = @user.id
-            redirect_to "/owners/#{@user.id}"
+            redirect_to 'sessions#show'
         else
             flash[:errors] = @user.errors.full_messages
-            redirect_to "/sessions/new" #bad
+            redirect_to "/sessions/new"
         end
     end
+
 
     private
     def strong_params
