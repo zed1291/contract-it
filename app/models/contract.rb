@@ -1,5 +1,4 @@
 class Contract < ApplicationRecord
-  belongs_to :owner
+  belongs_to :user
   has_many :bids
-  has_many :general_contractors, through: :bids
 end

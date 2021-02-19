@@ -8,12 +8,8 @@ class SessionsController < ApplicationController
         redirect_to '/sessions/new'
     end
 
-    # def login
-    #     @user = User.new
-    # end
 
     def show
         @user = User.find_by(session[:current_user_id])
-        byebug
     end
 end

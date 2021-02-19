@@ -5,7 +5,7 @@ class UsersController < ApplicationController
             @user.save
             session[:current_user_id] = @user.id
             session[:role] = @user.role
-            redirect_to 'sessions#show'
+            redirect_to "/users/#{@user.id}"
         else
             flash[:errors] = @user.errors.full_messages
             redirect_to "/sessions/new"
@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     end
 
     def show
-        @user = User.find_by(params[:id])
+        @user = User.find params[:id]
     end
 
 
