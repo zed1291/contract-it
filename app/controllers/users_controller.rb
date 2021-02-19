@@ -1,11 +1,10 @@
 class UsersController < ApplicationController
     def create
         @user = User.new(strong_params)
-        if User.find_by_username(params[:user][:username])
-            # redirect_to 'goblygook'
-        elsif @user.valid?
+        if @user.valid?
             @user.save
             session[:current_user_id] = @user.id
+            session[:role] = @user.role
             redirect_to 'sessions#show'
         else
             flash[:errors] = @user.errors.full_messages

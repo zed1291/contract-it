@@ -3,7 +3,7 @@ class CreateContracts < ActiveRecord::Migration[6.1]
     create_table :contracts do |t|
       t.string :terms
       t.string :title
-      t.references :owner, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end

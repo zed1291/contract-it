@@ -4,7 +4,7 @@ class CreateBids < ActiveRecord::Migration[6.1]
       t.string :title
       t.integer :quote
       t.references :contract, null: false, foreign_key: true
-      t.references :general_contractor, null: false, foreign_key: true
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end
