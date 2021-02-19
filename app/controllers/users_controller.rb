@@ -12,6 +12,10 @@ class UsersController < ApplicationController
         end
     end
 
+    def show
+        @user = User.find_by(params[:id])
+    end
+
 
     private
     def strong_params
