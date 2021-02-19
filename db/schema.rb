@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 2021_02_18_160446) do
 
   create_table "bids", force: :cascade do |t|
+    t.string "title"
     t.integer "quote"
     t.integer "contract_id", null: false
     t.integer "general_contractor_id", null: false
@@ -31,19 +32,8 @@ ActiveRecord::Schema.define(version: 2021_02_18_160446) do
     t.index ["owner_id"], name: "index_contracts_on_owner_id"
   end
 
-  create_table "general_contractors", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "owners", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "sub_bids", force: :cascade do |t|
+    t.string "title"
     t.integer "quote"
     t.integer "sub_contract_id", null: false
     t.integer "subcontractor_id", null: false
@@ -54,17 +44,12 @@ ActiveRecord::Schema.define(version: 2021_02_18_160446) do
   end
 
   create_table "sub_contracts", force: :cascade do |t|
+    t.string "title"
     t.string "terms"
     t.integer "general_contractor_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["general_contractor_id"], name: "index_sub_contracts_on_general_contractor_id"
-  end
-
-  create_table "subcontractors", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|

@@ -1,6 +1,7 @@
 class CreateSubContracts < ActiveRecord::Migration[6.1]
   def change
     create_table :sub_contracts do |t|
+      t.string :title
       t.string :terms
       t.references :general_contractor, null: false, foreign_key: true
 
